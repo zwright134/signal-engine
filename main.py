@@ -99,11 +99,19 @@ def update_signals():
         new_signals = []
         for pair in pairs:
             signal_data = generate_signal(pair)
-            signals_collection.insert_one(signal_data)
+            result = signals_collection.insert_one(signal_data)
+            signal_data["_id"] = str(result.inserted_id)  # keep it for reference
             new_signals.append(signal_data)
+
+        # Strip _id before returning
+        for s in new_signals:
+            if "_id" in s:
+                del s["_id"]
+
         return {"status": "updated", "signals": new_signals}
     except Exception as e:
         return {"status": "error", "detail": str(e)}
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
