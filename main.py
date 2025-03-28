@@ -7,8 +7,19 @@ import requests
 from pymongo import MongoClient
 import os
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware  # ✅ Add this line
 
 app = FastAPI()
+
+# ✅ Enable CORS for frontend access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Later you can change this to ["https://signalhive.online"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # MongoDB connection
 client = MongoClient("mongodb+srv://zwright134:<password>@signalhivecluster.z704jfh.mongodb.net/?retryWrites=true&w=majority&appName=SignalHiveCluster")
