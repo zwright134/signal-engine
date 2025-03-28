@@ -22,7 +22,7 @@ app.add_middleware(
 
 
 # MongoDB connection
-client = MongoClient("mongodb+srv://zwright134:ytrSF4yXMzrJOdYY@signalhivecluster.z704jfh.mongodb.net/?retryWrites=true&w=majority&appName=SignalHiveCluster")
+client = MongoClient("mongodb+srv://zwright134:ytrSF4yXMzrJ0dYY@signalhivecluster.z704jfh.mongodb.net/?retryWrites=true&w=majority&appName=SignalHiveCluster")
 db = client['SignalHive']
 signals_collection = db['signals']
 
