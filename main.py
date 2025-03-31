@@ -13,7 +13,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-MONGODB_URI = mongodb+srv://chuechue:<4.wX-9.Lka.UqLq>@signalhivecluster.z704jfh.mongodb.net/?retryWrites=true&w=majority&appName=SignalHiveCluster
+MONGODB_URI = mongodb+srv://chuechue:4.wX-9.Lka.UqLq@signalhivecluster.z704jfh.mongodb.net/?retryWrites=true&w=majority&appName=SignalHiveCluster
 
 app = FastAPI()
 
