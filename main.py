@@ -9,6 +9,11 @@ import requests
 from pymongo import MongoClient
 import os
 import numpy as np
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+mongo_uri = os.getenv("MONGO_URI")
 
 app = FastAPI()
 
